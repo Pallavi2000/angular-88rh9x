@@ -7,7 +7,10 @@ import { HeaderComponent } from './header/header.component';
 import { HomeComponent } from './home/home.component';
 import { TeamComponent } from './team/team.component';
 
+import { HttpClientModule } from '@angular/common/http';
+
 import { RouterModule,Routes } from '@angular/router';
+import { IplService } from './ipl.service';
 const routes:Routes = [
   {
     path:"",
@@ -28,9 +31,11 @@ const routes:Routes = [
 @NgModule({
   imports: [ 
     BrowserModule, FormsModule,
-    RouterModule.forRoot(routes) ],
+    RouterModule.forRoot(routes),
+    HttpClientModule ],
   declarations: [ AppComponent,HeaderComponent,HomeComponent,TeamComponent],
-  bootstrap:    [ AppComponent ]
+  bootstrap:    [ AppComponent ],
+  providers: [IplService]
 })
 export class AppModule {
 

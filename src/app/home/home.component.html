@@ -1,0 +1,33 @@
+<div class = "row">
+  <div class = "col-md-8">
+
+      <select class="form-control col-md-4"(change)="getPlayers($event)">
+        <option value="">Select Team</option>
+        <option *ngFor = 'let teamName of teamNames'>{{teamName}}</option>
+      </select>
+      
+      <div *ngIf = "players && players.length > 0" class = "mt-3">
+        <table class="table sm">
+          <thead>
+            <tr>
+              <th>Name</th>
+              <th>Role</th>
+              <th>Label</th>
+              <th>Price</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr *ngFor = "let player of players">
+              <td>{{player.player}}</td>
+              <td>{{player.role}}</td>
+              <td>{{player.label}}</td>
+              <td>{{player.price}}</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+
+  </div>
+  <div class =  "col-md-4">
+  </div>
+</div>
